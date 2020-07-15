@@ -1,4 +1,6 @@
 
+
+
     $(document).ready( function scroll_to(init_top, init_left){
       var init_top = $(".content").offset().top+0;
      var init_left = $(".content").offset().left+0;
@@ -36,7 +38,7 @@ var window_width= $(window).width();
               if($('.zoom-out').is(':visible') && windowWidth>600){
 
               $(".content").removeClass("zoom-out").addClass("zoom-in")
-              $(".content").css({"height":84 + 'vh', "width":window_width})
+              $(".content").css({"height":100 + 'vh', "width":window_width})
                 // $(".click_layer").css({"height":84 + 'vw', "width":window_width})
               $(".insight1").removeClass("tenx").addClass("onex")
 
@@ -62,6 +64,7 @@ var window_width= $(window).width();
 
 
   })
+
     $('.insidecontent').hide()
 
   $('.filters-list a').on('click', function() {
@@ -70,11 +73,20 @@ var window_width= $(window).width();
       $('.insidecontent').show()
     $('.all').hide()
     $(filter).show()
-      // $('.filters-list a').removeClass('category1')
-    // $(this).addClass('category1')
-    // var boxsize = $(this).attr('data-size')
-    // $(filter).removeClass('small large')
-    // $(filter).addClass(boxsize)
+      $(".content").css("overflow", "hidden");
+
+      function disableScroll() {
+          // Get the current page scroll position
+          scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+
+              // if any scroll is attempted, set this to the previous value
+              window.onscroll = function() {
+                  window.scrollTo(scrollLeft, scrollTop);
+              };
+      }
+
+
     return false
   })
 
@@ -84,10 +96,26 @@ var window_width= $(window).width();
       $('.insidecontent').hide()
     $('.all').hide()
     $(filter).hide()
-      // $('.filters-list a').removeClass('category1')
-    // $(this).addClass('category1')
-    // var boxsize = $(this).attr('data-size')
-    // $(filter).removeClass('small large')
-    // $(filter).addClass(boxsize)
+
+    function enableScroll() {
+        window.onscroll = function() {};
+    }
     return true
   })
+
+  // document.addEventListener('scroll', function (event) {
+  //     if (event.target.id === 'slide1') { // or any other filtering condition
+  //         console.log('scrolling', event.target)
+  //
+  //         var pixel = $(document).scrollTop()
+  //         // var documentHeight2 = $(".slide2_body").height()
+  //         // var windowHeight2 = $('#slide2').height()
+  //         //
+  //         // var difference2 = documentHeight2 - windowHeight2
+  //         // var percentage = 100 * pixel / difference2
+  //    $('.content').css({'top': 0 * pixel , 'left': 0 * pixel  })
+  //             // $('.scroll_side').css('left', -1 * pixel)
+  //                 // $('.fixed_side').css('top', -1 * pixel)
+  //           console.log(pixel)
+  //     }
+  // }, true /*Capture event*/)
