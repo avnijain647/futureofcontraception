@@ -7,7 +7,7 @@
 var windowWidth = $(window).width()
       if(windowWidth>600){
         $(".content").addClass("zoom-out")
-        $(".insight1").addClass("tenx")
+        $(".insight1").addClass("onex")
 
   // $("#overview").css({"height":168 + 'vw', "width":200 + 'vw'})
       // $('html,body').animate({scrollTop: init_top,
@@ -50,8 +50,8 @@ var window_width= $(window).width();
 
 
   $(".content").removeClass("zoom-in").addClass("zoom-out")
-  $(".content").css({"height":700 +'vh', "width":700 +'vw'})
-    $(".insight1").removeClass("onex").addClass("tenx")
+  $(".content").css({"height":100 +'vh', "width":100 +'vw'})
+    // $(".insight1").removeClass("onex").addClass("tenx")
 
   // $(".click_layer").css({"height":168 +'vw' , "width":200 +'vw'})
   var top = Math.round(((offset_top*image_height)/overview_image_height)-(window_height/2));
@@ -64,13 +64,14 @@ var window_width= $(window).width();
 
 
   })
-
-    $('.insidecontent').hide()
+  $('.bg-articles').hide()
+    $('.articles').hide()
 
   $('.filters-list a').on('click', function() {
     var filter = $(this).attr('data-filter')
     console.log(filter)
-      $('.insidecontent').show()
+      $('.bg-articles').show()
+      $('.articles').show()
     $('.all').hide()
     $(filter).show()
       $(".content").css("overflow", "hidden");
@@ -90,10 +91,11 @@ var window_width= $(window).width();
     return false
   })
 
-  $('.insidecontent').on('click', function() {
+  $('.bg-articles').on('click', function() {
     var filter = $(this).attr('data-filter')
     console.log(filter)
-      $('.insidecontent').hide()
+    $('.bg-articles').hide()
+      $('.articles').hide()
     $('.all').hide()
     $(filter).hide()
 
@@ -102,6 +104,16 @@ var window_width= $(window).width();
     }
     return true
   })
+
+  $('.col1').on('click', function() {
+    var filter = $(this).attr('data-filter')
+    console.log(filter)
+    $(filter).show()
+      $(filter).css('z-index', 120)
+      // $('.article-display').css('z-index', 99)
+    return false
+  })
+
 
   // document.addEventListener('scroll', function (event) {
   //     if (event.target.id === 'slide1') { // or any other filtering condition
