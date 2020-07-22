@@ -74,8 +74,8 @@ var window_width= $(window).width();
       $('.articles').show()
     $('.all').hide()
     $(filter).show()
-      $(".content").css("overflow", "hidden");
-
+      // $(".content").css("overflow", "hidden");
+  $('.content').addClass('blur', 10000)
       function disableScroll() {
           // Get the current page scroll position
           scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -98,10 +98,10 @@ var window_width= $(window).width();
       $('.articles').hide()
     $('.all').hide()
     $(filter).hide()
-
-    function enableScroll() {
-        window.onscroll = function() {};
-    }
+  $('.content').removeClass('blur', 5000)
+    // function enableScroll() {
+    //     window.onscroll = function() {};
+    // }
     return true
   })
 
