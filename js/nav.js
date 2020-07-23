@@ -23,7 +23,7 @@ var window_width= $(window).width();
   var image_width = $(".content").width()
   var image_height = $(".content").height()
 
-  console.log(image_width)
+  // console.log(image_width)
 
 
   $('.content').on('click', function(e){
@@ -105,14 +105,14 @@ var window_width= $(window).width();
     return true
   })
 
-  $('.col1').on('click', function() {
-    var filter = $(this).attr('data-filter')
-    console.log(filter)
-    $(filter).show()
-      $(filter).css('z-index', 120)
-      // $('.article-display').css('z-index', 99)
-    return false
-  })
+  // $('.col1').on('click', function() {
+  //   var filter = $(this).attr('data-filter')
+  //   console.log(filter)
+  //   $(filter).show()
+  //     $(filter).css('z-index', 120)
+  //     // $('.article-display').css('z-index', 99)
+  //   return false
+  // })
 
 
   // document.addEventListener('scroll', function (event) {
