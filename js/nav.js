@@ -30,7 +30,7 @@ var window_width= $(window).width();
     var windowWidth = $(window).width()
     var offset_top = event.pageY;
     var offset_left = event.pageX;
-
+$('.menu-display').css('display', 'none')
     var overview_image_width = $(".content").width()
     var overview_image_height = $(".content").height()
 
@@ -74,8 +74,10 @@ var window_width= $(window).width();
       $('.articles').show()
     $('.all').hide()
     $(filter).show()
-      // $(".content").css("overflow", "hidden");
-  $('.content').addClass('blur', 10000)
+    $(this).addClass('visited')
+    $('.close').removeClass('show-menu')
+      $('.menu-display').css('display', 'none')
+  $('.content').addClass('opacity', 10000)
       function disableScroll() {
           // Get the current page scroll position
           scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -98,21 +100,75 @@ var window_width= $(window).width();
       $('.articles').hide()
     $('.all').hide()
     $(filter).hide()
-  $('.content').removeClass('blur', 5000)
+    $('.close').removeClass('show-menu')
+      $('.menu-display').css('display', 'none')
+  $('.content').removeClass('opacity', 5000)
     // function enableScroll() {
     //     window.onscroll = function() {};
     // }
     return true
   })
 
-  // $('.col1').on('click', function() {
-  //   var filter = $(this).attr('data-filter')
-  //   console.log(filter)
-  //   $(filter).show()
-  //     $(filter).css('z-index', 120)
-  //     // $('.article-display').css('z-index', 99)
-  //   return false
-  // })
+  $('.menu').on('click', function() {
+    $('.menu-display').css('display', 'block')
+    $('.close').toggleClass('show-menu')
+    return false
+  })
+
+  $('.close').on('click', function() {
+    $('.menu-display').css('display', 'none')
+    $('.close').toggleClass('show-menu')
+    return false
+  })
+
+$(document).ready(function(){
+
+a.nav = {
+  navGallery:function(e){
+    var that = $(this);
+    var gallery = that.parents('.insight-macro');
+    var current = $('.gallery .visible').index();
+    var newCurrent = 0;
+    // previous
+    if(that.hasClass('prev')){
+      if(current === 0){
+        newCurrent = $('.gallery-image').length - 1;
+      } else {
+        newCurrent = current - 1;
+      }
+    } else {
+      if(current === $('.gallery-image').length - 1){
+        newCurrent = 0;
+      } else {
+        newCurrent = current + 1;
+      }
+    }
+    $('.gallery-image').removeClass('visible').eq(newCurrent).addClass('visible');
+    e.preventDefault();
+  }
+
+}
+
+});
+
+
+
+
+
+//   $('.next').on('click', function() {
+//     var filter = $(this).attr('data-filter')
+//     console.log(filter)
+//     $(filter).addClass('visible')
+//
+//     if ($('.insight-macro-1').is(':visible')){
+//   $('.insight-macro-1').removeClass('visible')
+//   // $('.show-filters').text('Show Filters')
+// } else {
+//   // $('.filters-list').slideDown()
+//   // $('.show-filters').text('Hide Filters')
+// }
+//     return false
+//   })
 
 
   // document.addEventListener('scroll', function (event) {
