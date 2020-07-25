@@ -59,6 +59,8 @@ var nextSlide = function () {
 
   moveSlide(currentSlide)
 
+// currentSlide.css('top', 0 )
+
 }
 
 // 2. a function that deals with taking us to the previous slide
@@ -95,10 +97,12 @@ $('.next').on('click', function() {
   // clearInterval(autoSlide)
 	// here we call the nextSlide function and go to the next slide
   nextSlide()
+  $('html, body').animate({scrollTop:0},500);
 })
 
 $('.prev').on('click', function() {
   // clearInterval(autoSlide)
+  $('html, body').animate({scrollTop:0},500);
   previousSlide()
 })
 

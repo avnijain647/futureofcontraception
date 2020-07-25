@@ -1,0 +1,44 @@
+.header-insight-macro-1{
+  width:100%;
+  height:100%;
+  background-image: url(header-insight-macro-1.png);
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.header-insight-macro-2{
+  width:100%;
+  height:100%;
+  background-image: url(header-insight-macro-2.jpg);
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.header-insight-macro-3{
+  width:100%;
+  height:100%;
+  background-image: url(header-insight-macro-3.png);
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.header-user-discovering{
+  width:100%;
+  height:100%;
+  background-image: url(user-discovering-1.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.design-power-1{
+  width:100%;
+  height:100%;
+  background-image: url(design-power-1.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
