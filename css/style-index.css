@@ -539,7 +539,7 @@ background: yellow;
 .header{
 max-width:80%;
 padding:5% 10% 2.5% 10%;
-  height:640px;
+  height:80vh;
   /* padding:5%; */
   overflow: hidden;
 
@@ -646,18 +646,6 @@ z-index:120;
  -webkit-filter: blur(10px);
 }
 
-@media(max-width:1080px) {
-
-
-  .insight-macro-1,
-  .insight-macro-2,
-  .insight-macro-3{
-    float: left;
-  width:520px;
-    padding: 0 40px;
-  }
-
-}
 
 
 @media(max-width:600px) {
@@ -668,15 +656,16 @@ z-index:120;
     top:10vh;
   bottom: 5vh;
     max-width:85vw;
-    /* height: 700px; */
   }
+.copy,
+.footnotes,
+.para{
+  padding-left: 10%;
+  max-width: 80%;
+}
 
-  .insight-macro-1,
-  .insight-macro-2,
-  .insight-macro-3{
-    float: left;
-  width:250px;
-    padding: 0 25px;
-  }
+.header{
+  height:60vh;
+}
 
 }

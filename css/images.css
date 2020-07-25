@@ -3,7 +3,7 @@
   height:100%;
   background-image: url(header-insight-macro-1.png);
   background-size: cover;
-  background-position: top left;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -12,7 +12,7 @@
   height:100%;
   background-image: url(header-insight-macro-2.jpg);
   background-size: cover;
-  background-position: top left;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -21,7 +21,7 @@
   height:100%;
   background-image: url(header-insight-macro-3.png);
   background-size: cover;
-  background-position: top left;
+  background-position: center;
   background-repeat: no-repeat;
 }
 

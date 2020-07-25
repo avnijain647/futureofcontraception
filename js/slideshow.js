@@ -97,12 +97,13 @@ $('.next').on('click', function() {
   // clearInterval(autoSlide)
 	// here we call the nextSlide function and go to the next slide
   nextSlide()
-  $('html, body').animate({scrollTop:0},500);
+  // var top = 5 + 'vh'
+  $('html, .slideshow').animate({scrollTop:200},500);
 })
 
 $('.prev').on('click', function() {
   // clearInterval(autoSlide)
-  $('html, body').animate({scrollTop:0},500);
+  $('html, .slideshow').animate({scrollTop:200},500);
   previousSlide()
 })
 
