@@ -152,11 +152,11 @@ color:#25194D;
 .menu-display{
   overflow: scroll;
   padding: .5vw;
-  z-index:100;
+  z-index:200;
   background: #fff;
   border: 1px solid #ccc;
   display: none;
-  position: absolute;
+  position: fixed;
   top:3.5vw;
   left:3.5vw;
   font-family: 'andes l';
