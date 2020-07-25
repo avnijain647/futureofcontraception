@@ -31,6 +31,7 @@ var window_width= $(window).width();
     var offset_top = event.pageY;
     var offset_left = event.pageX;
 $('.menu-display').css('display', 'none')
+$('.close').removeClass('show-menu')
     var overview_image_width = $(".content").width()
     var overview_image_height = $(".content").height()
 
@@ -100,56 +101,57 @@ $('.menu-display').css('display', 'none')
       $('.articles').hide()
     $('.all').hide()
     $(filter).hide()
+
     $('.close').removeClass('show-menu')
       $('.menu-display').css('display', 'none')
   $('.content').removeClass('opacity', 5000)
     // function enableScroll() {
     //     window.onscroll = function() {};
     // }
-    return true
+    return false
   })
 
   $('.menu').on('click', function() {
     $('.menu-display').css('display', 'block')
-    $('.close').toggleClass('show-menu')
+    $('.close').addClass('show-menu')
     return false
   })
 
   $('.close').on('click', function() {
     $('.menu-display').css('display', 'none')
-    $('.close').toggleClass('show-menu')
+    $('.close').removeClass('show-menu')
     return false
   })
 
-$(document).ready(function(){
-
-a.nav = {
-  navGallery:function(e){
-    var that = $(this);
-    var gallery = that.parents('.insight-macro');
-    var current = $('.gallery .visible').index();
-    var newCurrent = 0;
-    // previous
-    if(that.hasClass('prev')){
-      if(current === 0){
-        newCurrent = $('.gallery-image').length - 1;
-      } else {
-        newCurrent = current - 1;
-      }
-    } else {
-      if(current === $('.gallery-image').length - 1){
-        newCurrent = 0;
-      } else {
-        newCurrent = current + 1;
-      }
-    }
-    $('.gallery-image').removeClass('visible').eq(newCurrent).addClass('visible');
-    e.preventDefault();
-  }
-
-}
-
-});
+// $(document).ready(function(){
+//
+// a.nav = {
+//   navGallery:function(e){
+//     var that = $(this);
+//     var gallery = that.parents('.insight-macro');
+//     var current = $('.gallery .visible').index();
+//     var newCurrent = 0;
+//     // previous
+//     if(that.hasClass('prev')){
+//       if(current === 0){
+//         newCurrent = $('.gallery-image').length - 1;
+//       } else {
+//         newCurrent = current - 1;
+//       }
+//     } else {
+//       if(current === $('.gallery-image').length - 1){
+//         newCurrent = 0;
+//       } else {
+//         newCurrent = current + 1;
+//       }
+//     }
+//     $('.gallery-image').removeClass('visible').eq(newCurrent).addClass('visible');
+//     e.preventDefault();
+//   }
+//
+// }
+//
+// });
 
 
 
