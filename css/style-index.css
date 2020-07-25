@@ -398,7 +398,8 @@ color:#25194D;
   overflow: hidden;
 }
 
-.holder{
+.holder,
+.holder-substitute{
   transition: left 1s;
   background: yellow;
 position: relative;
@@ -409,6 +410,7 @@ width: 300%;
 }
 
 .one,
+.one-substitute,
 .two,
 .three{
   /* display: inline-block; */
