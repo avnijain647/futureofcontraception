@@ -387,7 +387,7 @@ top:0;
   text-align: center;
   margin-bottom: 0px auto 50px auto;
     font-family: 'andes mi';
-color:#25194D;
+color: #3177B1;
   font-size: calc(36px + 12 * ((100vw - 320px) / 1280));
 }
  .slideshow{
@@ -399,7 +399,7 @@ color:#25194D;
 }
 
 .holder,
-.holder-substitute{
+.user-holder{
   transition: left 1s;
   background: yellow;
 position: relative;
@@ -410,9 +410,12 @@ width: 300%;
 }
 
 .one,
-.one-substitute,
 .two,
-.three{
+.three,
+.user-one,
+.user-two,
+.user-three,
+.user-four{
   /* display: inline-block; */
 top:0;
 left:0;
@@ -422,21 +425,11 @@ left:0;
   position: relative;
     /* margin: 0 auto; */
 }
-.one-inner{
-  background: white;
-}
-.two-inner{
-  background: white;
-}
-.three-inner{
-  background: white;
-}
-.one-inner,
-.two-inner,
-.three-inner{
+
+.inner{
   top:0;
   left:0;
-  /* background: green; */
+  background: white;
   position: relative;
   max-width:100%;
   padding: 0 auto;
@@ -467,10 +460,21 @@ font-weight: 600;
   cursor: pointer;
 }
 
+.user-prev{
+    padding-left:3%;
+  cursor: pointer;
+}
 .next{
     cursor: pointer;
   padding-right:3%;
 }
+
+.user-next{
+    cursor: pointer;
+  padding-right:3%;
+}
+.user-prev img,
+.user-next img,
 .prev img,
 .next img{
   width:22px;
@@ -545,13 +549,15 @@ background: yellow;
 .header{
 max-width:80%;
 padding:5% 10% 2.5% 10%;
-  height:80vh;
+  /* height:80vh; */
   /* padding:5%; */
   overflow: hidden;
 
 /* background: yellow; */
 }
-
+.header img{
+  width:100%;
+}
 
 
 .header-text{
@@ -595,35 +601,52 @@ padding:5% 10% 2.5% 10%;
 .copy b{
   padding-bottom: 50px;
 }
+
+.copy img{
+width:100%;
+}
 .para{
+  /* display: inline-block; */
   color: #3177B1;
   padding-left:20%;
     font-family: 'andes mi';
-      font-size: calc(14px + 8 * ((100vw - 320px) / 1280));
+      font-size: calc(16px + 7 * ((100vw - 320px) / 1280));
     max-width:50%;
     float: left;
+    /* background: red; */
     /* margin:80px 180px 80px auto; */
 }
 .quote{
   color:#3177B1;
   font-family: 'andes mi';
   /* background: red; */
-    font-size: calc(14px + 6 * ((100vw - 320px) / 1280));
+    font-size: calc(16px + 7 * ((100vw - 320px) / 1280));
 }
 .para-name{
   font-family: 'andes l';
     font-size: calc(12px + 6 * ((100vw - 320px) / 1280));
 }
-.footnotes{
+.footnotes,
+.footnotes2{
   float: left;
+  /* background: red; */
   color:#111111;
   font-family: 'Open Sans', sans-serif;
-    font-size: calc(10px + 2 * ((100vw - 320px) / 1280));
+    font-size: calc(12px + 3 * ((100vw - 320px) / 1280));
   max-width: 20%;
   padding: 0 10% 0 10%;
 }
-.copy img{
-width:100%;
+.footnotes2{
+  display: none;
+}
+.footnotes a{
+  text-decoration: none;
+color:#3177B1;
+}
+
+.footnotes2 a{
+  text-decoration: none;
+color:#3177B1;
 }
 
 .border{
@@ -652,9 +675,22 @@ z-index:120;
  -webkit-filter: blur(10px);
 }
 
+@media(max-width:900px) {
 
+  .footnotes{
+    display: none;
+  }
+  .footnotes2{
+    display: block;
+  }
+  .footnotes,
+  .footnotes2{
+    padding-left: 10%;
+    max-width: 80%;
+  }
+}
 
-@media(max-width:600px) {
+@media(max-width:900px) {
   .menu-display{
     padding:10vw 2.5vw 10vw 2.5vw;
       left:5vw;
@@ -666,20 +702,25 @@ z-index:120;
   .caption{
     .padding: 0 5vw 0 5vw;
   }
-.copy,
-.footnotes,
-.para{
+.copy{
   padding-left: 10%;
   max-width: 80%;
 }
-
-.header{
-  height:30vh;
+.para{
+    max-width: 70%;
 }
+
 .prev,
-.next{
+.user-prev{
     padding-left:2%;
 }
+.next,
+.user-next{
+  padding-right:2%;
+}
+
+.user-prev img,
+.user-next img,
 .prev img,
 .next img{
   width:20px;
